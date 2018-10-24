@@ -7,7 +7,7 @@ SELECT
 FROM titles as movieTitle
 left join ratings as movieRatings on movieTitle.title_id =movieRatings.title_id 
                    
-Where movieRatings.rating
+Where movieRatings.rating >7
                    
 order by movieRatings.rating desc
 limit 100
