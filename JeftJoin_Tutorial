@@ -1,13 +1,13 @@
- SELECT
- movieTitle.original_title,
-                   movieTitle.title_id,
-                   movieTitle.premiered,
-                   movieRatings.rating
+SELECT
+  movieTitle.original_title,
+  movieTitle.title_id,
+  movieTitle.premiered,
+  movieRatings.rating
+
+FROM titles as movieTitle
+left join ratings as movieRatings on movieTitle.title_id =movieRatings.title_id 
                    
-                   FROM titles as movieTitle
-                   left join ratings as movieRatings on movieTitle.title_id =movieRatings.title_id 
+Where movieRatings.rating
                    
-                   Where movieRatings.rating --<> null
-                   
-                   order by movieRatings.rating desc
-                   limit 100
+order by movieRatings.rating desc
+limit 100
